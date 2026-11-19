@@ -92,6 +92,7 @@ main{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;paddin
 .word .h{font-size:22px;min-width:4.1em}
 .word .grow{flex:1;min-width:0}
 .word .p{font-size:16px}
+.word .s{font-size:20px;line-height:1.35}
 .word .j{font-size:13px;color:var(--sub)}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
 .dot.l{background:var(--warn)} .dot.k{background:var(--ok)}
@@ -120,6 +121,7 @@ main{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;paddin
 .q .kind{font-size:13px;color:var(--sub);margin-bottom:10px}
 .q .big{font-size:56px;line-height:1.2}
 .q .big.long{font-size:34px}
+.q .big.xlong{font-size:26px;line-height:1.4}
 .q .jbig{font-size:24px;font-weight:600;line-height:1.4}
 .q .ans{margin-top:16px}
 .q .ans .p{font-size:26px}
@@ -224,7 +226,36 @@ const LESSONS=[
   {zh:"得",py:"de",pos:"助",ja:"（動詞・形容詞の後で）程度や結果を導く",note:"〜が…だ"},
   {zh:"快",py:"kuài",pos:"形",ja:"速い"},
   {zh:"说",py:"shuō",pos:"動",ja:"話す"}
- ],ps:[]}
+ ],ps:[
+  {zh:"你会打乒乓球吗？",py:"Nǐ huì dǎ pīngpāngqiú ma?",ja:"あなたは卓球ができますか。"},
+  {zh:"我还有课，现在不能打。",py:"Wǒ hái yǒu kè, xiànzài bù néng dǎ.",ja:"私はまだ授業があるので、今はできません。"},
+  {zh:"那下课以后，怎么样？",py:"Nà xiàkè yǐhòu, zěnmeyàng?",ja:"それなら授業が終わってからは、どうですか。"},
+  {zh:"我也可以参加吗？",py:"Wǒ yě kěyǐ cānjiā ma?",ja:"私も参加していいですか。"},
+  {zh:"我会游泳。",py:"Wǒ huì yóuyǒng.",ja:"私は泳げます。",note:"会：習って身につけて「できる」"},
+  {zh:"我不会做饭。",py:"Wǒ bú huì zuò fàn.",ja:"私は料理ができません。"},
+  {zh:"你会开车吗？",py:"Nǐ huì kāichē ma?",ja:"あなたは車を運転できますか。"},
+  {zh:"我今天有事，不能去游泳。",py:"Wǒ jīntiān yǒu shì, bù néng qù yóuyǒng.",ja:"私は今日用事があって、泳ぎに行けません。",note:"能：能力や条件があって「できる」"},
+  {zh:"我能游一百米。",py:"Wǒ néng yóu yìbǎi mǐ.",ja:"私は100メートル泳げます。"},
+  {zh:"你能游多少米？",py:"Nǐ néng yóu duōshao mǐ?",ja:"あなたは何メートル泳げますか。"},
+  {zh:"这儿可以游泳。",py:"Zhèr kěyǐ yóuyǒng.",ja:"ここは泳いでもかまいません。",note:"可以：許可されて「できる」"},
+  {zh:"教室里不可以抽烟。",py:"Jiàoshì li bù kěyǐ chōu yān.",ja:"教室でたばこを吸ってはいけません。"},
+  {zh:"这儿可以上网吗？",py:"Zhèr kěyǐ shàngwǎng ma?",ja:"ここでインターネットを使えますか。"},
+  {zh:"他跑得很快。",py:"Tā pǎode hěn kuài.",ja:"彼は走るのが速い。",note:"主語＋動詞＋得＋様態補語"},
+  {zh:"他跑得不快。",py:"Tā pǎode bú kuài.",ja:"彼は走るのが速くない。",note:"否定の「不」は「得」の後に置く"},
+  {zh:"你吃得多不多？",py:"Nǐ chīde duō bu duō?",ja:"あなたはたくさん食べますか。"},
+  {zh:"他打网球打得很好。",py:"Tā dǎ wǎngqiú dǎde hěn hǎo.",ja:"彼はテニスが上手です。",note:"目的語があるときは動詞をくり返す。1つ目の動詞は省ける"},
+  {zh:"他说汉语说得不好。",py:"Tā shuō Hànyǔ shuōde bù hǎo.",ja:"彼は中国語を話すのが上手ではありません。"},
+  {zh:"你做饭做得怎么样？",py:"Nǐ zuò fàn zuòde zěnmeyàng?",ja:"あなたの料理の腕前はどうですか。",note:"「得」の前の動詞は省けない。×我做饭得不好"},
+  {zh:"我饭吃得不快。",py:"Wǒ fàn chīde bú kuài.",ja:"私は食べるのが速くありません。"},
+  {zh:"他们滑雪滑得很好。",py:"Tāmen huáxuě huáde hěn hǎo.",ja:"彼らはスキーをするのが上手です。",note:"滑雪は「動詞＋目的語」の離合詞。「滑」をくり返す"},
+  {zh:"我哥哥开车开得不好。",py:"Wǒ gēge kāichē kāide bù hǎo.",ja:"私の兄は車を運転するのが得意ではありません。",note:"开车も離合詞。「开」をくり返す"},
+  {zh:"你喜欢什么体育运动？",py:"Nǐ xǐhuan shénme tǐyù yùndòng?",ja:"あなたはどんなスポーツが好きですか。"},
+  {zh:"你看漫画看得快吗？",py:"Nǐ kàn mànhuà kànde kuài ma?",ja:"あなたは漫画を読むのが速いですか。"},
+  {zh:"你英语说得怎么样？",py:"Nǐ Yīngyǔ shuōde zěnmeyàng?",ja:"あなたの英語はどうですか。"},
+  {zh:"今天有事，我不能跟你一起打篮球。",py:"Jīntiān yǒu shì, wǒ bù néng gēn nǐ yìqǐ dǎ lánqiú.",ja:"今日は用事があるので、あなたと一緒にバスケットボールができません。",note:"「不能」は「跟你一起」の前に置く"},
+  {zh:"这儿可以踢足球吗？不可以。",py:"Zhèr kěyǐ tī zúqiú ma? Bù kěyǐ.",ja:"ここでサッカーをしてもよいですか。いけません。",note:"サッカーは「踢」。「不能」でもよい"},
+  {zh:"我爸爸饭做得很好。",py:"Wǒ bàba fàn zuòde hěn hǎo.",ja:"私の父は料理を作るのがとても上手です。"}
+ ]}
 ];
 
 /* ===== 道具 ===== */
@@ -402,10 +433,10 @@ function vToday(){
   }
   const noActive=!LESSONS.some(L=>S.active[L.id]);
   h+=`<div class="card hero"><div class="num">${total}</div><div class="lbl">今日のカード</div>
-    <div class="sub">復習 ${due}・新しい単語 ${nw}</div>
+    <div class="sub">復習 ${due}・新しく覚える ${nw}</div>
     <div style="margin-top:18px">${noActive?`<div class="sub" style="margin-bottom:10px">「課」のタブで、学習に入れる課を選んでください。</div><button class="btn primary" data-tab="lessons">課を選ぶ</button>`
       :total?`<button class="btn primary" data-act="study">始める</button>`
-      :`<div class="sub" style="margin-bottom:10px">今日のぶんは終わりました。</div>${activeItems().some(it=>!S.cards[it.id])?`<button class="btn" data-act="more">新しい単語を5つ足す</button>`:""}`}</div></div>`;
+      :`<div class="sub" style="margin-bottom:10px">今日のぶんは終わりました。</div>${activeItems().some(it=>!S.cards[it.id])?`<button class="btn" data-act="more">新しく5つ足す</button>`:""}`}</div></div>`;
   h+=`<div class="stats"><div><b>${streak()}</b><span>日連続</span></div><div><b>${S.days[today()]||0}</b><span>今日こなした数</span></div><div><b>${known}</b><span>覚えた語</span></div></div>`;
   const base=S.lastBackup||S.firstUse;
   if(Object.keys(S.cards).length&&Date.now()-base>30*864e5)
@@ -418,7 +449,7 @@ function vLessons(){
     h+=`<button class="item" data-act="openLesson" data-id="${esc(L.id)}"><div class="grow"><div><b>${esc(L.title)}</b>${S.active[L.id]?'<span class="badge">学習中</span>':""}</div>
       <div class="sub">単語 ${L.items.filter(i=>i.kind==="w").length}${L.items.some(i=>i.kind==="p")?"・フレーズ "+L.items.filter(i=>i.kind==="p").length:""}・覚えた ${st.k}</div>
       <div class="bar"><i style="width:${pct}%"></i></div></div><span class="chev">›</span></button>`});
-  h+=`</div><p class="sub" style="margin:0 4px">教科書「シンプルチャイニーズ 東京〈会話篇〉」の単語帳に合わせています。ほかの課は、写真をもらったら足します。</p>`;
+  h+=`</div><p class="sub" style="margin:0 4px">教科書「シンプルチャイニーズ 東京〈会話篇〉」に合わせています。</p>`;
   return h;
 }
 function vLesson(L){
@@ -429,8 +460,8 @@ function vLesson(L){
   <div class="legend"><span><i class="dot"></i>まだ</span><span><i class="dot l"></i>学習中</span><span><i class="dot k"></i>覚えた</span><span style="margin-left:auto">押すと音声</span></div>`;
   [["w","単語"],["p","フレーズ"]].forEach(([k,name])=>{
     const arr=L.items.filter(i=>i.kind===k); if(!arr.length)return;
-    h+=`<div class="list">`+arr.map(it=>`<button class="word" data-act="speak" data-id="${esc(it.id)}">${zh(it.zh,"h")}
-      <div class="grow"><div class="p">${py(it.py)}</div><div class="j">${it.pos?"["+esc(it.pos)+"] ":""}${esc(it.ja)}</div>${it.note?`<div class="j">${esc(it.note)}</div>`:""}</div><i class="dot ${status(it.id)==="n"?"":status(it.id)}"></i></button>`).join("")+`</div>`;
+    h+=`<div class="sub" style="margin:4px 4px 6px">${name}（${arr.length}）</div><div class="list">`+arr.map(it=>`<button class="word" data-act="speak" data-id="${esc(it.id)}">${k==="w"?zh(it.zh,"h"):""}
+      <div class="grow">${k==="p"?`<div class="s">${zh(it.zh)}</div>`:""}<div class="p">${py(it.py)}</div><div class="j">${it.pos?"["+esc(it.pos)+"] ":""}${esc(it.ja)}</div>${it.note?`<div class="j">${esc(it.note)}</div>`:""}</div><i class="dot ${status(it.id)==="n"?"":status(it.id)}"></i></button>`).join("")+`</div>`;
   });
   return h;
 }
@@ -442,13 +473,13 @@ function testCfg(){
 }
 function testPool(c){
   let pool=LESSONS.filter(L=>c.lessons.includes(L.id)).flatMap(L=>L.items).filter(it=>c.ps||it.kind==="w");
-  if(c.type==="tone")pool=pool.filter(it=>hasTone(it.py));
+  if(c.type==="tone")pool=pool.filter(it=>it.kind==="w"&&hasTone(it.py));
   return pool;
 }
 function vTest(){
   const c=testCfg(), pool=testPool(c), hasPs=ORDER.some(id=>ITEMS[id].kind==="p");
   let h=`<div class="card"><h2>範囲</h2><div class="chips">${LESSONS.map(L=>`<button class="${c.lessons.includes(L.id)?"on":""}" data-act="cfgLesson" data-id="${esc(L.id)}">${esc(L.title)}</button>`).join("")}</div>
-    ${hasPs?`<div class="item" style="padding:12px 0 0;border:0"><div class="grow">フレーズも入れる</div><button class="switch ${c.ps?"on":""}" data-act="cfgPs" role="switch" aria-checked="${c.ps}" aria-label="フレーズも入れる"></button></div>`:""}</div>
+    ${hasPs?`<div class="item" style="padding:12px 0 0;border:0"><div class="grow">フレーズも入れる<div class="sub">声調えらびは単語だけです</div></div><button class="switch ${c.ps?"on":""}" data-act="cfgPs" role="switch" aria-checked="${c.ps}" aria-label="フレーズも入れる"></button></div>`:""}</div>
   <div class="list">${Object.keys(TYPES).map(k=>`<button class="item" data-act="cfgType" data-id="${k}"><span class="check">${c.type===k?"✓":""}</span><div class="grow"><b>${TYPES[k][0]}</b><div class="sub">${TYPES[k][1]}</div></div></button>`).join("")}</div>
   <div class="card"><h2>問題の数</h2><div class="seg">${[[10,"10問"],[20,"20問"],[0,"全部"]].map(([n,l])=>`<button class="${c.n===n?"on":""}" data-act="cfgN" data-id="${n}">${l}</button>`).join("")}</div>
     <div class="sub" style="margin-top:8px">この条件で出せるのは ${pool.length} 問です。</div></div>
@@ -491,12 +522,12 @@ function renderPlay(){
   b.scrollTop=0;
   const f=b.querySelector(".field");if(f&&!f.disabled){try{f.focus()}catch(e){}}
 }
-const big=it=>zh(it.zh,"big"+(it.zh.length>5?" long":""));
+const big=it=>zh(it.zh,"big"+(it.zh.length>9?" xlong":it.zh.length>5?" long":""));
 function answerBlock(it){return `<div class="ans"><div class="p">${py(it.py)}</div><div class="j">${it.pos?"["+esc(it.pos)+"] ":""}${esc(it.ja)}</div>${it.note?`<div class="n">${esc(it.note)}</div>`:""}
   <button class="spk" data-act="speak" data-id="${esc(it.id)}" aria-label="音声を聞く">${SPK}</button></div>`}
 function vStudy(s,it){
   const isNew=!S.cards[it.id];
-  return `<div class="q"><div class="kind">${isNew?"新しい単語":"復習"}・${esc(lessonOf(it.lesson).title)}</div>${big(it)}
+  return `<div class="q"><div class="kind">${isNew?(it.kind==="p"?"新しいフレーズ":"新しい単語"):"復習"}・${esc(lessonOf(it.lesson).title)}</div>${big(it)}
     ${flip?answerBlock(it):`<div class="hint">ピンインと意味を思い出してください</div>`}</div>
   ${flip?`<div class="grade"><button class="g0" data-act="grade" data-id="0">もう一度<small>今日また出す</small></button><button data-act="grade" data-id="1">あやしい<small>近いうちに</small></button><button class="g2" data-act="grade" data-id="2">覚えた<small>間隔を空ける</small></button></div>`
        :`<button class="btn primary" data-act="flip">答えを見る</button>`}`;
