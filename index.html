@@ -255,7 +255,36 @@ const LESSONS=[
   {zh:"今天有事，我不能跟你一起打篮球。",py:"Jīntiān yǒu shì, wǒ bù néng gēn nǐ yìqǐ dǎ lánqiú.",ja:"今日は用事があるので、あなたと一緒にバスケットボールができません。",note:"「不能」は「跟你一起」の前に置く"},
   {zh:"这儿可以踢足球吗？不可以。",py:"Zhèr kěyǐ tī zúqiú ma? Bù kěyǐ.",ja:"ここでサッカーをしてもよいですか。いけません。",note:"サッカーは「踢」。「不能」でもよい"},
   {zh:"我爸爸饭做得很好。",py:"Wǒ bàba fàn zuòde hěn hǎo.",ja:"私の父は料理を作るのがとても上手です。"}
- ]}
+ ]},
+ {id:"9",title:"第9課",ws:[
+  {zh:"春天",py:"chūntiān",pos:"名",ja:"春"},
+  {zh:"夏天",py:"xiàtiān",pos:"名",ja:"夏"},
+  {zh:"秋天",py:"qiūtiān",pos:"名",ja:"秋"},
+  {zh:"冬天",py:"dōngtiān",pos:"名",ja:"冬"},
+  {zh:"暖和",py:"nuǎnhuo",pos:"形",ja:"暖かい"},
+  {zh:"热",py:"rè",pos:"形",ja:"暑い"},
+  {zh:"凉快",py:"liángkuai",pos:"形",ja:"涼しい"},
+  {zh:"冷",py:"lěng",pos:"形",ja:"寒い"},
+  {zh:"家",py:"jiā",pos:"量",ja:"〜軒（家・店・会社を数える）"},
+  {zh:"面馆",py:"miànguǎn",pos:"名",ja:"麺類専門の食堂"},
+  {zh:"味道",py:"wèidao",pos:"名",ja:"味"},
+  {zh:"还可以",py:"hái kěyǐ",pos:"組",ja:"まあまあだ、比較的良い"},
+  {zh:"别的",py:"bié de",pos:"代",ja:"他の、別の",note:"教科書の見出しは 别（的）"},
+  {zh:"地方",py:"dìfang",pos:"名",ja:"場所、ところ",note:"什么地方：どこ"},
+  {zh:"担担面",py:"dàndanmiàn",pos:"名",ja:"担担麺"},
+  {zh:"牛肉面",py:"niúròumiàn",pos:"名",ja:"牛肉そば"},
+  {zh:"辣",py:"là",pos:"形",ja:"辛い"},
+  {zh:"下次",py:"xiàcì",pos:"名",ja:"次回",note:"前回は 上次 shàngcì"},
+  {zh:"比",py:"bǐ",pos:"前",ja:"〜に比べて、〜よりも"},
+  {zh:"高",py:"gāo",pos:"形",ja:"（背が）高い",note:"背が低いは 矮 ǎi"},
+  {zh:"一点儿",py:"yìdiǎnr",pos:"名",ja:"少し",note:"形容詞の後に置いて、他と比べた差を表す"},
+  {zh:"过",py:"guo",pos:"助",ja:"〜したことがある",note:"動詞の後に置いて、過去の経験を表す"},
+  {zh:"迪士尼",py:"Díshìní",pos:"名",ja:"ディズニー"},
+  {zh:"乐园",py:"lèyuán",pos:"名",ja:"楽園、遊園地"},
+  {zh:"电话",py:"diànhuà",pos:"名",ja:"電話",note:"打电话：電話をかける"},
+  {zh:"给",py:"gěi",pos:"前",ja:"〜に、〜のために"},
+  {zh:"还是",py:"háishi",pos:"接",ja:"〜か、それとも〜か"}
+ ],ps:[]}
 ];
 
 /* ===== 道具 ===== */
@@ -412,7 +441,7 @@ function lessonStat(L){let k=0,l=0;L.items.forEach(it=>{const s=status(it.id);if
 /* ===== 画面 ===== */
 let tab="today", openLesson=null, playOpen=false, flip=false;
 const TITLES={today:"今日",lessons:"課",test:"テスト",settings:"設定"};
-const POS={"名":"名詞","動":"動詞","形":"形容詞","接":"接続詞","副":"副詞","助":"助詞","助動":"助動詞","量":"量詞"};
+const POS={"名":"名詞","動":"動詞","形":"形容詞","接":"接続詞","副":"副詞","助":"助詞","助動":"助動詞","量":"量詞","代":"代詞","前":"前置詞"};
 const TYPES={py:["ピンインを書く","漢字を見て、ピンインと声調を打つ"],zj:["中国語 → 日本語","漢字を見て、意味を思い出す"],jz:["日本語 → 中国語","日本語を見て、漢字かピンインで答える"],tone:["声調をえらぶ","音声を聞いて、正しい声調を選ぶ"]};
 function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2600)}
 function render(){
